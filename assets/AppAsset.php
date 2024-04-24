@@ -30,7 +30,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         //se agrego el js del templete
-        "vendor/jquery/jquery.min.js",
+        // "vendor/jquery/jquery.min.js",
         'vendor/bootstrap/js/bootstrap.bundle.min.js',
         "vendor/jquery-easing/jquery.easing.min.js",
         "js/sb-admin-2.min.js",
@@ -41,7 +41,7 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        //'yii\bootstrap5\BootstrapAsset',
+        'yii\bootstrap5\BootstrapAsset',
         JqueryAsset::class,
         BootstrapPluginAsset::class,
     ];

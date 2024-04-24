@@ -35,7 +35,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'appat',
             'appmat',
             'genero',
-            //'email:email',
+            //'telefono',
+            //'fecha',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Usuario $model, $key, $index, $column) {

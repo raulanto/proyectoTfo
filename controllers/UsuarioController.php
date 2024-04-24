@@ -18,11 +18,17 @@ class UsuarioController extends Controller
      */
     public function behaviors()
     {
-        return [
-            'ghost-access' => [
-                'class' => 'webvimark\modules\UserManagement\components\GhostAccessControl',
-            ],
-        ];
+        return array_merge(
+            parent::behaviors(),
+            [
+                'verbs' => [
+                    'class' => VerbFilter::className(),
+                    'actions' => [
+                        'delete' => ['POST'],
+                    ],
+                ],
+            ]
+        );
     }
 
     /**
@@ -108,6 +114,10 @@ class UsuarioController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function ContarUsuarios(){
+        
     }
 
     /**

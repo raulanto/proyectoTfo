@@ -12,7 +12,8 @@ use Yii;
  * @property string $appat
  * @property string $appmat
  * @property string $genero
- * @property string $email
+ * @property string|null $telefono
+ * @property string|null $fecha
  */
 class Usuario extends \yii\db\ActiveRecord
 {
@@ -30,11 +31,12 @@ class Usuario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre', 'appat', 'appmat', 'genero', 'email'], 'required'],
+            [['nombre', 'appat', 'appmat', 'genero'], 'required'],
+            [['fecha'], 'safe'],
             [['nombre'], 'string', 'max' => 90],
             [['appat', 'appmat'], 'string', 'max' => 60],
             [['genero'], 'string', 'max' => 1],
-            [['email'], 'string', 'max' => 255],
+            [['telefono'], 'string', 'max' => 10],
         ];
     }
 
@@ -49,7 +51,8 @@ class Usuario extends \yii\db\ActiveRecord
             'appat' => 'Appat',
             'appmat' => 'Appmat',
             'genero' => 'Genero',
-            'email' => 'Email',
+            'telefono' => 'Telefono',
+            'fecha' => 'Fecha',
         ];
     }
 

@@ -18,7 +18,7 @@ class UsuarioSearch extends Usuario
     {
         return [
             [['id'], 'integer'],
-            [['nombre', 'appat', 'appmat', 'genero', 'email'], 'safe'],
+            [['nombre', 'appat', 'appmat', 'genero', 'telefono', 'fecha'], 'safe'],
         ];
     }
 
@@ -59,13 +59,14 @@ class UsuarioSearch extends Usuario
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'fecha' => $this->fecha,
         ]);
 
         $query->andFilterWhere(['like', 'nombre', $this->nombre])
             ->andFilterWhere(['like', 'appat', $this->appat])
             ->andFilterWhere(['like', 'appmat', $this->appmat])
             ->andFilterWhere(['like', 'genero', $this->genero])
-            ->andFilterWhere(['like', 'email', $this->email]);
+            ->andFilterWhere(['like', 'telefono', $this->telefono]);
 
         return $dataProvider;
     }

@@ -34,7 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'appat',
             'appmat',
             'genero',
-            'email:email',
+            'telefono',
+            'fecha',
         ],
     ]) ?>
 
